@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-sca3e=1, shrink-3o-fit=no">
+    <link rel="shortcut icon" size="16x16, 32x32" href="favicon.ico">
+    <title>ANIMATION TUTORIAL</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        body {
+            background-color: #aaa;
+        }
+
+        #sushi {
+            transition: 2s;
+        }
+
+        #kaiten {
+            opacity: 0.5;
+        }
+
+        #sushi.inTheKitchen {
+            left: 600px;
+            transform: scale(0);
+        }
+
+        a {
+            font-size: 24px;
+            letter-spacing: 2px;
+            padding: 10px;
+            display: block;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: 0.4s;
+            color: black;
+        }
+
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: 0s;
+        }
+
+        #mainTitle {
+            font-size: 48px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        #subTitle {
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            top: 0px;
+            left: 5px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="kaiten" src="svg/background.svg">
+    <div id="sushi">🍣</div>
+    <div style="position: absolute; left: 250px">
+        <div><a href="">
+                <span id="mainTitle">Kaiten Sushi</span>
+                <span id="subTitle">Approaches to Web animations</span>
+            </a>
+        </div>
+        <div style="margin-bottom: 40px; display: flex; top: 0px; position: relative;">
+            <div style="width: 60px"><a style="height: 30px" href="https://github.com/lucamug"><img src="svg/lucamug.svg"></a></div>
+            <div style="width: 60px"><a style="height: 30px" href="https://github.com/lucamug/kaiten-sushi"><img src="svg/github.svg"></a></div>
+            <div style="width: 60px"><a style="height: 30px" href="https://dev.to/lucamug/kaiten-sushi-approaches-to-web-animations-306k">
+                    <div style="position: relative; top: 8px"><img src="svg/dev.svg"></div>
+                </a></div>
+        </div>
+        <div><a href="tutorial-01-css-transition.html">01 css transition</a></div>
+        <div><a href="tutorial-02-css-animation.html">02 css animation</a></div>
+        <div><a href="tutorial-03-vanilla-javascript.html">03 vanilla javascript</a></div>
+        <div><a href="tutorial-04-vanilla-elm.html">04 vanilla elm</a></div>
+        <div><a href="tutorial-05-elm-animator-inline-1.html">05 elm animator inline</a></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" size="16x16, 32x32" href="favicon.ico">
+    <title>02 - CSS ANIMATION - CLICK ANYWHERE</title>
+    <link rel="stylesheet" type="text/css" href="https://lucamug.github.io/kaiten-sushi/css/style.css">
+    <style>
+        @keyframes toTheKaiten {
+            from {
+                left: 600px;
+                transform: scale(0)
+            }
+
+            40% {
+                left: 20px;
+                transform: scale(1.2, 0.8)
+            }
+
+            to {
+                left: 50px;
+                transform: scale(1)
+            }
+        }
+
+        @keyframes toTheKitchen {
+            from {
+                left: 50px;
+                transform: scale(1)
+            }
+
+            20% {
+                left: 100px;
+                transform: scale(0.8, 1.2)
+            }
+
+            40% {
+                left: 20px;
+                transform: scale(1.2, 0.8)
+            }
+
+            to {
+                left: 600px;
+                transform: scale(0)
+            }
+        }
+
+        .toTheKitchen {
+            animation: toTheKitchen 1s;
+            animation-fill-mode: forwards;
+        }
+
+        .toTheKaiten {
+            animation: toTheKaiten 1s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="kaiten" src="https://lucamug.github.io/kaiten-sushi/svg/background.svg">
+    <div id="homeLink">
+        <a href="https://lucamug.github.io/kaiten-sushi/">
+            <img src="https://lucamug.github.io/kaiten-sushi/svg/home.svg">
+        </a>
+    </div>
+    <div id="title">02 - CSS ANIMATION - CLICK ANYWHERE</div>
+    <div id="sushi">🍣</div>
+
+    <script>
+        document.body.onclick = function() {
+            if (sushi.className === "toTheKitchen") {
+                sushi.className = "toTheKaiten"
+            } else {
+                sushi.className = "toTheKitchen"
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <path stroke="#000" stroke-linejoin="round" stroke-width="12" d="M16 256L256 64l96 72v-32h48v72l96 80h-48v192H328V288h-96v160H64V256z"/>
+</svg>

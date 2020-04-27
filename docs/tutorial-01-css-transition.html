@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" size="16x16, 32x32" href="favicon.ico">
+    <title>01 - CSS TRANSITION - CLICK ANYWHERE</title>
+    <link rel="stylesheet" type="text/css" href="https://lucamug.github.io/kaiten-sushi/css/style.css">
+    <style>
+        #sushi {
+            transition: 1s;
+        }
+
+        #sushi.inTheKitchen {
+            left: 600px;
+            transform: scale(0);
+        }
+    </style>
+</head>
+
+<body>
+    <img id="kaiten" src="https://lucamug.github.io/kaiten-sushi/svg/background.svg">
+    <div id="homeLink">
+        <a href="https://lucamug.github.io/kaiten-sushi/">
+            <img src="https://lucamug.github.io/kaiten-sushi/svg/home.svg">
+        </a>
+    </div>
+    <div id="title">01 - CSS TRANSITION - CLICK ANYWHERE</div>
+    <div id="sushi">🍣</div>
+
+    <script>
+        document.body.onclick = function() {
+            if (sushi.className === "inTheKitchen") {
+                sushi.removeAttribute('class');
+            } else {
+                sushi.className = "inTheKitchen"
+            }
+        }
+    </script>
+
+</body>
+
+</html>

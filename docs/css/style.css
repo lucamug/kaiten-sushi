@@ -1,0 +1,43 @@
+body {
+    background: #555;
+    font-family: sans-serif;
+}
+
+#sushi {
+    position: absolute;
+    top: 75px;
+    left: 50px;
+    font-size: 100px;
+    background: #eeb;
+    width: 140px;
+    height: 70px;
+    border-radius: 80px / 50px;
+    text-align: center;
+    border: 15px solid #dda;
+    line-height: 60px;
+    box-shadow: 2px 6px 5px 0px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+#kaiten {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 1440px;
+}
+
+#title {
+    position: absolute;
+    font-size: 16px;
+    letter-spacing: 2px;
+    pointer-events: none;
+    left: 36px
+}
+
+#homeLink {
+    position: absolute;
+}
+
+#homeLink img {
+    height: 16px;
+}

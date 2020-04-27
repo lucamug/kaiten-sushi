@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" size="16x16, 32x32" href="favicon.ico">
+    <title>03 - VANILLA JAVASCRIPT - CLICK ANYWHERE</title>
+    <link rel="stylesheet" type="text/css" href="https://lucamug.github.io/kaiten-sushi/css/style.css">
+</head>
+
+<body>
+    <img id="kaiten" src="https://lucamug.github.io/kaiten-sushi/svg/background.svg" onclick="clickOnPage()">
+    <div id="homeLink">
+        <a href="https://lucamug.github.io/kaiten-sushi/">
+            <img src="https://lucamug.github.io/kaiten-sushi/svg/home.svg">
+        </a>
+    </div>
+    <div id="title">03 - VANILLA JAVASCRIPT - CLICK ANYWHERE</div>
+    <div id="sushi">🍣</div>
+
+    <script>
+        function changeStyle(scale, x) {
+            sushi.style.transform = "scale(" + scale + ")";
+            sushi.style.left = x + "px";
+        }
+
+        onTheKaiten = {
+            x: 50,
+            scale: 1
+        };
+
+
+        inTheKitchen = {
+            x: 600,
+            scale: 0
+        };
+
+        init = {
+            currentState: onTheKaiten,
+            animationStart: onTheKaiten,
+            target: onTheKaiten,
+            animationLength: 0,
+            progress: null
+        }
+
+        model = init;
+
+        previousAnimationFrame = null;
+
+        function calculateDelta(timestamp) {
+            var delta = null;
+            if (model.progress === 0) {
+                delta = 1000 / 60;
+                previousAnimationFrame = timestamp;
+            } else {
+                delta = timestamp - previousAnimationFrame;
+                previousAnimationFrame = timestamp;
+            }
+            return delta;
+        }
+
+        function clickOnPage() {
+            if (model.target === onTheKaiten) {
+                model = {
+                    ...model,
+                    target: inTheKitchen,
+                    animationStart: model.currentState,
+                    animationLength: 1000,
+                    progress: 0,
+                }
+            } else {
+                model = {
+                    ...model,
+                    target: onTheKaiten,
+                    animationStart: model.currentState,
+                    animationLength: 1000,
+                    progress: 0
+                }
+            }
+            window.requestAnimationFrame(animationFrame);
+        };
+
+        function animationFrame(timestamp) {
+            if (model.progress !== null) {
+                if (model.progress < model.animationLength) {
+                    var delta = calculateDelta(timestamp);
+
+                    var animationRatio =
+                        Math.min(1, model.progress / model.animationLength);
+
+                    var newX =
+                        model.animationStart.x +
+                        (model.target.x - model.animationStart.x) *
+                        animationRatio;
+
+                    var newScale =
+                        model.animationStart.scale +
+                        (model.target.scale - model.animationStart.scale) *
+                        animationRatio;
+
+                    model = { ...model,
+                        progress: model.progress + delta,
+                        currentState: {
+                            x: newX,
+                            scale: newScale
+                        }
+                    }
+
+                    changeStyle(newScale, newX);
+
+                    window.requestAnimationFrame(animationFrame);
+
+                } else {
+                    model = { ...model,
+                        progress: null,
+                        currentState: model.target
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

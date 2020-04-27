@@ -1,0 +1,3 @@
+#!/bin/bash
+
+node_modules/.bin/elm-live src/Tutorial_04_VanillaElm.elm --dir=docs -- --output=docs/js/tutorial-04-vanilla-elm.js --debug

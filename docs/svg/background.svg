@@ -1,0 +1,6 @@
+<svg id="kaiten" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 370">
+    <polygon points="0 0 1440 0 1440 220 0 84" fill="#888"></polygon>
+    <polygon points="0 70 680 124 700 130 0 200" fill="#754"></polygon>
+    <polygon points="680 124 685 100 707 105 700 130" fill="#555"></polygon>
+    <polygon points="0 200 700 130 695 150 0 370" fill="#bb8"></polygon>
+</svg>

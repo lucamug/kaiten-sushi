@@ -1,0 +1,3 @@
+#!/bin/bash
+
+node_modules/.bin/elm-live src/Tutorial_06_ElmAnimatorInline2.elm --dir=docs -- --output=docs/js/tutorial-06-elm-animator-inline-2.js --debug
